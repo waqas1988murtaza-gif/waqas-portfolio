@@ -39,6 +39,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (statsColumn) observer.observe(statsColumn);
 
+    // --- SKILL TAG INTERACTIVITY ---
+    const skillTags = document.querySelectorAll('.skill-tag');
+    const skillDetails = document.getElementById('skill-details');
+
+    skillTags.forEach(tag => {
+        tag.addEventListener('click', () => {
+            // Remove active class from all tags
+            skillTags.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tag
+            tag.classList.add('active');
+            // Update details box
+            const info = tag.getAttribute('data-info');
+            skillDetails.style.opacity = '0';
+            setTimeout(() => {
+                skillDetails.innerText = info;
+                skillDetails.style.opacity = '1';
+            }, 200);
+        });
+    });
+
     // --- SMOOTH SCROLLING (For internal links if any) ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

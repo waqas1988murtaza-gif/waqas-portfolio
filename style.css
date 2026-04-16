@@ -192,11 +192,61 @@ nav {
     font-size: 11px;
     text-align: center;
     transition: var(--transition);
+    cursor: pointer;
 }
 
-.skill-tag:hover {
+.skill-tag:hover, .skill-tag.active {
     background: rgba(0, 242, 255, 0.1);
     border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+.skill-details-box {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 2px solid var(--accent);
+    font-size: 13px;
+    color: var(--text-secondary);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    border-radius: 0 4px 4px 0;
+    transition: opacity 0.3s ease;
+}
+
+/* --- ENTRANCE ANIMATIONS --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.side-panel {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.main-content {
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+    opacity: 0;
+}
+
+.stats-column {
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+    opacity: 0;
+}
+
+.card {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 /* --- STATS COLUMN --- */
