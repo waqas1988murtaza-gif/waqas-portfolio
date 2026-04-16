@@ -118,7 +118,7 @@ nav {
 .profile-img-container {
     width: 100%;
     aspect-ratio: 1;
-    border-radius: 50% 50% 0 0; /* Semi-oval look */
+    border-radius: 50% 50% 0 0; 
     overflow: hidden;
     margin-bottom: 25px;
     border-bottom: 3px solid var(--gold);
@@ -254,33 +254,6 @@ nav {
     display: flex;
     align-items: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    transition: opacity 0.3s ease;
-}
-
-/* --- ENTRANCE ANIMATIONS --- */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.side-panel {
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-.main-content {
-    animation: fadeInUp 0.8s ease 0.2s forwards;
-    opacity: 0;
-}
-
-.stats-column {
-    animation: fadeInUp 0.8s ease 0.4s forwards;
-    opacity: 0;
 }
 
 /* --- STATS COLUMN --- */
@@ -328,7 +301,7 @@ nav {
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 2px;
-    color: #ffd700;
+    color: var(--gold);
 }
 
 .whatsapp-btn-mini {
@@ -343,10 +316,6 @@ nav {
     text-decoration: none;
     display: block;
     font-weight: bold;
-}
-
-.whatsapp-btn-mini:hover {
-    opacity: 0.8;
 }
 
 /* --- BUTTONS --- */
@@ -371,30 +340,12 @@ nav {
 
 .btn-primary {
     background: var(--accent);
-    color: var(--bg-dark);
-}
-
-.btn-outline {
-    border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
-}
-
-/* --- GLOW EFFECT --- */
-.glow {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: var(--accent);
-    filter: blur(80px);
-    opacity: 0.1;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
+.btn-outline {
+    border: 1px solid var(--border);
+    color: var(--navy);
 }
 
 /* --- RESPONSIVE --- */
