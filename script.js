@@ -45,17 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     skillTags.forEach(tag => {
         tag.addEventListener('click', () => {
+            if (tag.classList.contains('active')) return;
+            
             // Remove active class from all tags
             skillTags.forEach(t => t.classList.remove('active'));
             // Add active class to clicked tag
             tag.classList.add('active');
-            // Update details box
+            
+            // Update details box with a smooth fade
             const info = tag.getAttribute('data-info');
             skillDetails.style.opacity = '0';
+            
             setTimeout(() => {
                 skillDetails.innerText = info;
                 skillDetails.style.opacity = '1';
-            }, 200);
+                // Add a subtle border glow to indicate selection
+                skillDetails.style.borderColor = 'var(--accent)';
+            }, 300);
         });
     });
 
