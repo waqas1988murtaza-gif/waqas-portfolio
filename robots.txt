@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://waqas1988murtaza-gif.github.io/waqas-portfolio/sitemap.xml

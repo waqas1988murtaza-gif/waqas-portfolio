@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- ANIMATED COUNTERS ---
     const stats = document.querySelectorAll('.stat-number');
+    // Counters have meaningful fallback values in HTML for crawlers and users with JS disabled.
     let started = false;
 
     const startCounters = () => {
